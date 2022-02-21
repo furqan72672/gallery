@@ -1,10 +1,10 @@
 <template>
-  <canvas></canvas>
+
 </template>
 
 <script>
 export default {
-  name: "Snap"
+  name: "SharedGalleryCreate"
 }
 </script>
 

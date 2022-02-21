@@ -1,21 +1,33 @@
 <template>
-  <div class="d-flex flex-column justify-center align-center my-10" style="height: 100%; width: 100%" >
+  <div class="d-flex flex-column justify-center align-center " style="height: 100%; width: 100%" >
     <span class="title mb-2">My Devices</span>
-    <div class="mb-10 d-flex justify-space-between" style="width: 20vw">
-      <v-btn border size="small">Manage Devices</v-btn>
-      <v-btn border size="small">Link New Device</v-btn>
+    <div class="mb-10 d-flex flex-wrap align-center justify-center">
+      <v-btn border size="small" class="mr-1">Manage Devices</v-btn>
+      <v-btn border size="small" class="ml-1" to="/devices/register">Link New Device</v-btn>
     </div>
-    <div class="mt-4" v-for="i in 5" :key="i">
-      <Devices :name="`Device # ${i}`" src="https://picsum.photos/200/300" type="Personal Cam"/>
+    <div class="mt-4" v-for="(device,i) in devices" :key="i">
+      <Devices :device="device"/>
     </div>
   </div>
 </template>
 
 <script>
 import Devices from "../components/Devices";
+import {ref} from "vue";
+import {DeviceService} from "../services/deviceService";
 export default {
   name: "MyDevices",
-  components: {Devices}
+  components: {Devices},
+  async setup(){
+    const devices=ref([])
+    const service=new DeviceService()
+
+    devices.value=await service.getAll("620b48272e81c7e598577487")
+
+    return{
+      devices
+    }
+  }
 }
 </script>
 

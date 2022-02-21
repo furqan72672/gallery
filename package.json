@@ -8,10 +8,12 @@
   },
   "dependencies": {
     "@mdi/font": "5.9.55",
+    "axios": "^0.26.0",
     "core-js": "^3.6.5",
     "roboto-fontface": "*",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-0",
+    "vue3-qr-reader": "^1.0.0",
     "vuetify": "^3.0.0-alpha.0",
     "vuex": "^4.0.0-0",
     "webfontloader": "^1.0.0"
