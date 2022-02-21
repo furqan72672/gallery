@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
   <Suspense>
     <template #default>
       <v-app>
@@ -11,6 +12,13 @@
       <h1>Loading</h1>
     </template>
   </Suspense>
+=======
+  <v-app>
+    <v-main>
+      <router-view/>
+    </v-main>
+  </v-app>
+>>>>>>> origin/muqeet-image
 </template>
 
 <script>
@@ -23,7 +31,10 @@ export default {
   }),
 }
 </script>
+<<<<<<< HEAD
 
 <style>
 
 </style>
+=======
+>>>>>>> origin/muqeet-image
