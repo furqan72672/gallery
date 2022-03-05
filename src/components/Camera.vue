@@ -3,7 +3,7 @@
     <v-progress-circular v-if="loading" indeterminate color="white" size="x-large"></v-progress-circular>
     <QrStream :camera="camera" @decode="handleQR" @init="handleInit"/>
     <div class="d-flex mt-2">
-      <v-btn class="align-self-center" @click="handleCancel">Cancel</v-btn>
+      <v-btn class="align-self-center btn-global" @click="handleCancel">Cancel</v-btn>
     </div>
   </div>
 </template>

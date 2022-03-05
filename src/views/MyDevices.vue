@@ -1,11 +1,11 @@
 <template>
-  <div class="d-flex flex-column justify-center align-center " style="height: 100%; width: 100%" >
-    <span class="title mb-2">My Devices</span>
+  <div class="d-flex flex-column justify-center align-center" style="height: 100%; width: 100%" >
+    <span class="title">My Devices</span>
     <div class="mb-10 d-flex flex-wrap align-center justify-center">
-      <v-btn border size="small" class="mr-1">Manage Devices</v-btn>
-      <v-btn border size="small" class="ml-1" to="/devices/register">Link New Device</v-btn>
+      <v-btn border class="mr-1 btn-global">Manage Devices</v-btn>
+      <v-btn border class="ml-1 btn-global" to="/devices/register">Link New Device</v-btn>
     </div>
-    <div class="mt-4" v-for="(device,i) in devices" :key="i">
+    <div class="mt-10" v-for="(device,i) in devices" :key="i">
       <Devices :device="device"/>
     </div>
   </div>
@@ -32,5 +32,11 @@ export default {
 </script>
 
 <style>
-
+.title{
+  font-size: 2.5rem;
+  font-family: Century;
+  font-weight: bold;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
 </style>

@@ -1,51 +1,62 @@
 import { createRouter, createWebHistory } from 'vue-router'
-<<<<<<< HEAD
 import AddCamera from "../views/AddCamera";
 import MyDevices from "../views/MyDevices";
-import HomeScreen from "../views/HomeScreen";
+import Home from "../views/Home";
 import SharedGalleryOptions from "../views/SharedGalleryOptions";
 import SharedGalleryJoin from "../views/SharedGalleryJoin";
-=======
-import Home from '../views/Home.vue'
-import Album from '@/views/Album'
->>>>>>> origin/muqeet-image
+import MyPhotos from '../views/MyPhotos.vue'
+import Album from '../views/Gallery'
+import SharedGalleryCreate from "../views/SharedGalleryCreate";
+import SharedGalleryList from "../views/SharedGalleryList";
+import Gallery from "../views/Gallery";
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
-<<<<<<< HEAD
-    component: HomeScreen
+    component: Home
   },
   {
     path: '/gallery/options',
-    name: 'GalleryOptions',
     component: SharedGalleryOptions
   },
   {
     path: '/gallery/join',
-    name: 'GalleryJoin',
     component: SharedGalleryJoin
   },
   {
+    path: '/gallery/manage',
+    component: SharedGalleryCreate,
+    children:[
+      {
+        path:':id',
+        component: SharedGalleryCreate,
+      }
+    ]
+  },
+  {
+    path: '/galleries',
+    component: SharedGalleryList
+  },
+  {
     path: '/devices/register',
-    name: 'AddCamera',
     component: AddCamera
   },
   {
     path: '/devices',
-    name: 'MyDevices',
     component: MyDevices
-  },
-=======
-    component: Home
   },
   {
     path: '/album',
-    name: 'Album',
     component: Album
+  },
+  {
+    path: '/my-photos',
+    component: MyPhotos
+  },
+  {
+    path: '/gallery/:id',
+    component: Gallery
   }
->>>>>>> origin/muqeet-image
 ]
 
 const router = createRouter({

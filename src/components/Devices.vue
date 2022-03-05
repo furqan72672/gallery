@@ -1,5 +1,5 @@
 <template>
-  <v-card width="40vw" min-height="20vh" tile border class="d-flex align-self-center align-content-center align-center pa-5">
+  <v-card min-width="40vw" min-height="20vh" rounded class="d-flex align-self-center align-center pa-5 bg-grey-lighten-3">
     <div>
       <img :src="src" style="width: 85px;height: 75px"/>
     </div>
@@ -8,12 +8,12 @@
       <v-card-subtitle>{{ device.device_type }}</v-card-subtitle>
     </div>
     <v-spacer></v-spacer>
-    <v-btn size="small" @click="showModal=true">Settings</v-btn>
+    <v-btn class="btn-global" size="small" @click="showModal=true">Settings</v-btn>
   </v-card>
 
   <v-overlay v-model="showModal">
     <div class="d-flex justify-center align-center" style="width: 100vw;height: 100vh">
-      <v-card class="pa-4 d-flex flex-column justify-space-around align-center" rounded min-width="40vw" min-height="50vh">
+      <v-card class="pa-4 d-flex flex-column justify-space-around align-center bg-grey-lighten-3" rounded min-width="40vw" min-height="50vh">
 
         <v-card-title class="mb-4" style="font-size: 2rem">Settings</v-card-title>
 
@@ -63,8 +63,8 @@
         </div>
 
         <div class="d-flex align-center justify-end mt-6" style="width: 100%">
-          <v-btn size="small" @click="showModal=false">Cancel</v-btn>
-          <v-btn class="ml-2" size="small" @click="showModal=false" disabled>Submit</v-btn>
+          <v-btn class="btn-global" size="small" @click="showModal=false">Cancel</v-btn>
+          <v-btn class="ml-2 btn-global" size="small" @click="showModal=false" disabled>Submit</v-btn>
         </div>
 
       </v-card>

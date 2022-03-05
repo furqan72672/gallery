@@ -1,7 +1,7 @@
 <template>
-  <div class="d-flex justify-space-around align-baseline">
+  <div>
     <label v-if="showLabel" :class="{errorLabel:(error.length>0)}">{{label}}</label>
-    <input :readonly="readonly" :type="type" :value="modelValue" :placeholder="label" @input="$emit('update:modelValue',$event.target.value)" :class="{error:(error.length>0)}"/>
+    <input :readonly="readOnly" :type="type" :value="modelValue" :placeholder="placeholder" @input="$emit('update:modelValue',$event.target.value)" :class="{error:(error.length>0)}"/>
     <p v-if="error.length>0">{{error}}</p>
   </div>
 </template>
@@ -26,10 +26,14 @@ export default {
       type:Boolean,
       default:true
     },
-    readonly:{
+    readOnly:{
       type:Boolean,
       default:false
     },
+    placeholder:{
+      type:String,
+      default:''
+    }
   },
 }
 </script>
@@ -47,6 +51,7 @@ input{
   /*border-radius: 5px;*/
   background: white;
   width: 100%;
+  height: 100%;
   /*height: 5vh;*/
   padding:5px;
 }

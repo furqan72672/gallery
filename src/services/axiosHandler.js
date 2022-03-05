@@ -1,8 +1,8 @@
 import axios from 'axios'
 
 const axiosHandler = axios.create({
-    // baseURL: 'http://192.168.88.90:3000',
-    baseURL: 'http://192.168.100.212:4000',
+    // baseURL: 'http://192.168.12.90:4000',
+    baseURL: 'http://10.20.20.108:4000',
     timeout: 10000,
     params: {} // do not remove this, its added to add params later in the config
 });

@@ -1,12 +1,12 @@
 <template>
   <div class="d-flex align-center justify-space-around pa-10" v-if="!showForm" style="height: 100%;width: 100%;">
     <div class="d-flex flex-column justify-center align-center">
-      <v-btn icon class="bg-transparent" elevation="0" size="x-large" @click="handleOpenCamera"><v-icon size="xx-large">mdi-webcam</v-icon></v-btn>
+      <v-btn icon class="bg-transparent" elevation="0" size="x-large" @click="handleOpenCamera"><v-icon size="xx-large" style="color:darkslategrey">mdi-webcam</v-icon></v-btn>
       <p>Open Camera</p>
     </div>
     <span>OR</span>
     <div class="d-flex flex-column justify-center align-center">
-      <v-btn icon class="bg-transparent" elevation="0" size="x-large" @click="handleChooseFile"><v-icon size="xx-large">mdi-file-multiple</v-icon></v-btn>
+      <v-btn icon class="bg-transparent" elevation="0" size="x-large" @click="handleChooseFile"><v-icon size="x-large" style="color:darkslategrey">mdi-file-multiple</v-icon></v-btn>
       <p>Choose a file</p>
       <QrCapture id="reader" class="d-none" @decode="handleQR"/>
     </div>
@@ -17,7 +17,7 @@
   <div v-else>
     <Manually :device="device" style="padding-bottom: 0 !important;"/>
     <div class="d-flex justify-center">
-      <v-btn class="ma-2" plain append-icon="mdi-reload" @click="handleRetry">Retry</v-btn>
+      <v-btn class="ma-2 btn-global" plain append-icon="mdi-reload" @click="handleRetry">Retry</v-btn>
     </div>
   </div>
 
@@ -63,9 +63,9 @@ export default {
       showLoading.value=true
       device.value=await service.getByQR(e)
       showForm.value=true
-      console.log(device.value)
+      // console.log(device.value)
       showLoading.value=false
-
+      emit('device',device.value)
     }
 
     function handleChooseFile(){

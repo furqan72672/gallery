@@ -1,5 +1,5 @@
 <template>
-  <v-btn tile="tile" elevation="0" :class="[selected?'selected-btn':'btn']" @click="$emit('click')">{{text}}</v-btn>
+  <v-btn tile elevation="0" :class="[selected?'selected-btn':'btn']" @click="$emit('click')">{{text}}</v-btn>
 </template>
 
 <script>
@@ -21,7 +21,7 @@ export default {
   font-size: 95%;
   font-weight: normal;
   text-transform: capitalize;
-  background: white;
+  background: #e0e0e0;
   box-sizing: border-box;
 }
 .selected-btn{
@@ -29,6 +29,10 @@ export default {
   font-size: 95%;
   font-weight: normal;
   text-transform: capitalize;
-  background: #e0e0e0;
+  background: #eee;
+  box-sizing: border-box;
+  border-bottom: 3px solid darkorange;
+  color: darkorange;
+  font-weight: bold;
 }
 </style>

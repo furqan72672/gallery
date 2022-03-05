@@ -1,10 +1,9 @@
 <template>
-<<<<<<< HEAD
   <Suspense>
     <template #default>
-      <v-app>
+      <v-app class="bg-gradient-global">
         <v-main>
-          <router-view/>
+          <router-view class="bg-transparent"/>
         </v-main>
       </v-app>
     </template>
@@ -12,13 +11,6 @@
       <h1>Loading</h1>
     </template>
   </Suspense>
-=======
-  <v-app>
-    <v-main>
-      <router-view/>
-    </v-main>
-  </v-app>
->>>>>>> origin/muqeet-image
 </template>
 
 <script>
@@ -31,10 +23,9 @@ export default {
   }),
 }
 </script>
-<<<<<<< HEAD
 
 <style>
-
+.btn{
+  color:lightblue;
+}
 </style>
-=======
->>>>>>> origin/muqeet-image
